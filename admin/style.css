@@ -1,0 +1,196 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    outline: 0;
+}
+
+body {
+    margin: 0;
+    background-color: lightblue;
+}
+
+div.top {
+    background-color: steelblue;
+    border-bottom: 1px solid black;
+    position: fixed;
+    width: 100%;
+    height: 52px;
+    z-index: 3;
+}
+
+div.top h1, h2{
+    font-size: 25px;
+    margin: 0px 5px;
+    margin-top: 10px;
+    display:inline-block;
+    padding: 0px 10px 0px 10px;
+    font-family: Arial;
+}
+
+div.top h1 a{
+    color: white;
+    font-family: Arial;
+    text-decoration: none;
+}
+
+div.top h1 a:hover{
+    color: lightgray;
+}
+
+div.side {
+    background-color: aliceblue;
+    border-top: none;
+    border-right: 1px solid gray;
+    height: 100%;
+    width: 150px;
+    float: left;
+    padding-bottom: 32px;
+    position: fixed;
+    top: 53px;
+}
+
+div.side ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+}
+
+div.side li {
+    font-size: 18px;
+    margin: 0px 15px 0px 0px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+div.side li:hover {
+    background-color: #446;
+    font-weight: bold;
+}
+
+div.side li.selected {
+    background-color: #606099;
+    text-decoration: bold;
+}
+
+div.side li.selected:hover{
+    background-color: #505077;
+}
+
+
+div.side a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin: 0px;
+    width: 90%;
+    padding: 5px 15px 5px 15px;
+}
+
+div.side a:hover {
+    color: white;
+}
+
+div.option {
+    width: calc(100% - 180px);
+    padding: 15px;
+
+    position: relative;
+    left: 150px;
+    top: 53px;
+}
+
+
+/*---------------------*/
+
+div.option form textarea {
+    width: 100%;
+    height: 75%;
+}
+
+div.option a {
+    color: black;
+    font-weight: bold;
+    font-family: Arial;
+    text-decoration: none;
+}
+
+div.option a:hover {
+    color: white;
+}
+
+div.post-ops:first-of-type{
+    margin-top: 8px;
+}
+
+div.post-ops a{
+    border-bottom: 1px solid gray;
+    padding: 2px;
+}
+
+div.post-ops a:first-of-type {
+    display: inline-block;
+    width: 75%;
+}
+
+div.post-ops a:nth-of-type(3):hover{
+    color: #bc1913;
+}
+
+div.option form span {
+    display: inline-block;
+    min-width: 110px;
+}
+
+div.media-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.option .med-preview {
+    margin: 5px;
+    width: 250px;
+    height: 250px;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    position: relative;
+}
+
+div.option .med-preview img {
+    width: 250px;
+}
+
+div.med-options {
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    bottom: 0px;
+    transition: width 0.5s;
+    background-color: silver;
+    border-radius: 0px 10px 0px 0px;
+    overflow: hidden;
+    cursor: default;
+}
+
+div.med-options:hover {
+    width: 85px;
+}
+
+div.med-option-button {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-top: 2px;
+    margin-left: 3px;
+}
+
+div.med-option-button form input {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}

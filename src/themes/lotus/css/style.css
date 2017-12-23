@@ -1,0 +1,235 @@
+* { 
+    font-family: Georgia,sans-serif; 
+}
+
+code {
+    font-family: Lucida Console,Monaco,monospace;
+    font-weight: normal;
+    font-size: 16px;
+    color: #DDDDDD;
+    padding: 2px;
+    background-color: black;
+}
+
+pre code{
+    padding: 0px;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+
+}
+
+pre {
+    padding: 7px;
+    border: 2px inset silver;
+    border-radius: 8px;
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+    color: #422c52;
+    font-weight: bold;
+}
+
+a:hover{
+    color: #e7cbcb;
+}
+
+body {
+    margin:0;
+    background-color: #3c8493;
+
+    /* image credit:
+     * https://openclipart.org/detail/240471/
+     * seamless-floral-flourish-silhouette-design-pattern
+     */
+    /* background-image: url(/src/themes/lotus/pics/flowertexturesmall.png);
+     * background-size: 300px 225.2px; 
+     */
+
+    /* image credit:
+     * http://pngimg.com/download/3309/?i=1
+     */
+    background-image: url(/src/themes/lotus/pics/watersmall.png);
+    background-attachment: fixed;
+    background-size: 50%; 
+}
+
+#header {
+    margin: 20px auto;
+    margin-bottom: 0px;
+    background-color: #f4a5b1;
+    color: #FEFEFE;
+    padding: 3px 10px;
+    width: 80%;
+    min-width: 700px;
+    top: 0;
+    border-radius: 25px 25px 0px 0px;
+    box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, .5);
+    border-bottom: 2px solid gray;
+
+    /* image credit: hollywould99 on photobucket */
+    background-image: url(/src/themes/lotus/pics/lotus.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 140px;
+}
+
+#header h1,h2 {
+    display: inline-block;
+    padding: 0px 5px;
+}
+
+#header h1 {
+    font-size: 45px;
+    margin: 15px 0px;
+}
+
+#header h2 {
+    font-size: 20px;
+}
+
+#content {
+    background-color: #7bbd99;
+    margin: 20px auto;
+    min-height: 80%;
+    width: 80%;
+    min-width: 700px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 0px 0px 25px 25px;
+    box-shadow: 3px 6px 8px 2px rgba(0, 0, 0, .5);
+    font-size: 18px;
+    display: flex;
+    overflow-x: hidden;
+}
+
+#contact {
+    display: inline-block;
+    float: right;
+    margin-top: 15px;
+    margin-right: 20px;
+}
+
+#contact div {
+    border-radius: 25px;
+    border: 2px solid black;
+    display: inline-block;
+    background-color: white;
+    vertical-align: middle;
+
+    -webkit-transition: background-color .2s ease-out;
+    -moz-transition: background-color .2s ease-out;
+    -o-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+}
+
+#contact #bloglink {
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+}
+
+#contact div:hover {
+    background-color: #9090D0;
+}
+
+#contact img{
+    width: 50px;
+    height: 50px;
+}
+
+.project_card {
+    width: 450px;
+    display: inline-block;
+    text-align: left;
+    margin: 5px 5px;
+    height: 450px;
+    background-color: rgba(90,90,120,0.5);
+    overflow: auto;
+    box-shadow: 3px 3px 8px #222222;
+}
+
+.project_card h3 {
+    background-color: #022644;
+    padding: 15;
+    margin: 0;
+}
+
+.project_card p {
+    height: 60px;
+    max-height: 60px;
+    overflow: auto;
+    margin: 5px;
+}
+
+.project_card img {
+    margin: 0px 10px;
+    width: 430px;
+    height: 315px;
+}
+
+#blog-main {
+    position: relative;
+    margin: 0;
+    width: 250px;
+    min-height: inherit;
+    border-right: 2px solid gray;
+    display: inline-block;
+    vertical-align: top;
+    
+}
+
+#blog-main h2 {
+    color: #102040;
+}
+
+#lotus-content {
+    display: inline-block;
+    width: calc(100% - 252px);
+}
+
+#lotus-content iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+#lotus-content p {
+    margin: 10px auto;
+    padding: 0px 20px;
+    width: auto;
+}
+
+#post {
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#post h2{
+    color: #102040;
+    background-color: #a1d8d1;
+    width: 100%;
+    margin: 0;
+    padding: 15px 0px 15px 10px;
+    font-size: 36px;
+    font-family: Georgia,sans-serif;
+}
+
+#post-content {
+    font-size: 18px;
+    margin: 0px 15px;
+}
+
+#footer {
+    background-color: #161616;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+}
+
+#footer span{
+    float: right;
+}
