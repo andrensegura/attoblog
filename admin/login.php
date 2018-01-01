@@ -2,7 +2,7 @@
 define('D_ROOT', $_SERVER['DOCUMENT_ROOT']);
 require_once(D_ROOT . "/include/config.php");
 
-function print_head(){
+function print_login_head(){
     echo "<head>
         <meta http-equiv='Content-Type' content='text/html'>
         <title>" . SITE_TITLE . ": Admin Dashboard</title>
@@ -14,10 +14,10 @@ function print_head(){
 }
 
 function show_login_screen(){
-    print_head();
+    print_login_head();
     echo "<div id='login_screen'>
             <div><h1 id='login_header' >Atto Admin Dashboard</h1></div>
-            <form id='login_form' method='post' >
+            <form id='login_form' method='post' action='login.php'>
                 <div class='login_input'>
                     <input type='input' placeholder='Username'
                     name='username'></div>
@@ -37,6 +37,7 @@ function test_credentials(){
 
         require_once('li.php'); //$user and $pass
         if ( ($inputUser == $user) && (password_verify($inputPass, $pass)) ) {
+            set_cookie($pass);
             return True;
         } else {
             return False;
@@ -54,7 +55,15 @@ function set_cookie($user_string){
     $cookie_name = "attodash";
     $time = time() + (86400 * 3);
 
-    setcookie($cookie_name, $cookie_value, $time, "/");
+    setcookie($cookie_name, $cookie_value, $time, "/admin/");
+
+    $jcfg_file = $_SERVER['DOCUMENT_ROOT'] . "/include/config.json";
+    $jcfg = file_get_contents($jcfg_file);
+    $options = json_decode($jcfg, true);
+    $options['loginkey'] = $cookie_value;
+
+    $options = json_encode($options);
+    file_put_contents($jcfg_file, $options);
 
 }
 
@@ -62,7 +71,7 @@ function set_cookie($user_string){
 
 ///////////////////////////////////////////
 if (test_credentials()){
-    echo "Successfully logged in!";
+    header("Location: " . HOME . "/admin");
 } else{
     show_login_screen();
 }

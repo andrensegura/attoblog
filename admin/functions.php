@@ -327,23 +327,41 @@ function delete_file(){
     header("Refresh:0");
 }
 
-function check_option($option){
-    print_nav();
-    echo "<div class='option'>";
+function check_cookie() {
+    if (isset($_COOKIE['attodash'])) {
+        $jcfg_file = $_SERVER['DOCUMENT_ROOT'] . "/include/config.json";
+        $jcfg = file_get_contents($jcfg_file);
+        $options = json_decode($jcfg, true);
+        if ($options['loginkey'] == $_COOKIE['attodash']) {
+            return True;
+        }
+    } else {
+        return False;
+    }
+}
 
-    switch ($option){
-        case 'posts':
-            show_posts_options();
-            break;
-        case 'media':
-            show_media();
-            break;
-        case 'settings':
-            show_settings();
-            break;
-        default:
-            display_home();
+
+function check_option($option){
+    if (!check_cookie()){
+        require("login.php");
+    } else {
+        print_nav();
+        echo "<div class='option'>";
+    
+        switch ($option){
+            case 'posts':
+                show_posts_options();
+                break;
+            case 'media':
+                show_media();
+                break;
+            case 'settings':
+                show_settings();
+                break;
+            default:
+                display_home();
+        }
+       print_footer();
     }
 
-    print_footer();
 }
