@@ -25,7 +25,6 @@ function print_nav(){
             <ul>
             <li><a href='/admin/posts/'>Posts</a></li>
             <li><a href='/admin/media/'>Media</a></li>
-            <li><a href='/admin/themes/'>Themes</a></li>
             <li><a href='/admin/settings/'>Settings</a></li>
             <ul>
           </div>";
@@ -57,7 +56,7 @@ function show_posts_options(){
                 echo "Invalid URL";
         }
     } else {
-        echo "<a href='/admin/posts/new/'>New Post</a>";
+        echo "<a href='/admin/posts/new/'>New Post</a><hr>";
         show_all_posts();
     }
 }
@@ -70,7 +69,9 @@ function show_all_posts(){
         echo "<div class='post-ops'>
                 <a href='/{$key}'>{$info['title']}</a>
                 <a href='/admin/posts/edit/{$key}'>edit</a>
-                <a href='/admin/posts/delete/{$key}'>delete</a>
+                <a href='/admin/posts/delete/{$key}'
+                    onclick='return confirm(\"Are you sure you want to "
+                    . " remove: " . $info['title'] . "?\")'>delete</a>
                 </li></div>";
     }
 }
@@ -336,9 +337,6 @@ function check_option($option){
             break;
         case 'media':
             show_media();
-            break;
-        case 'themes':
-            echo "themes";
             break;
         case 'settings':
             show_settings();
